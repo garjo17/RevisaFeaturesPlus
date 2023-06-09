@@ -106,7 +106,7 @@ Ext.define('CustomApp', {
                   var featureState = (feature.get('State')) ? feature.get('State')._refObjectName : "None" ;  
   
                   var featureName = feature.get('Name');
-              //    console.log('NOMBRE FEATURE :', featureName);
+                  //console.log('NOMBRE FEATURE :', featureName);
                  
                   var f  = {
                       FormattedID: feature.get('FormattedID'),
@@ -156,10 +156,11 @@ Ext.define('CustomApp', {
                               EstimateTotal +=  story.get('TaskEstimateTotal');
                               RemainingTotal +=  story.get('TaskRemainingTotal'); 
   
-  
+                             // console.log('Feature---> ',featureName, ' US :', storyName, '  Iteracion US :', storyIteration, 'ITERACON FILTRO ', this.iterComboBox.getRecord().get('Name') );
                               
                               if ( storyIteration === this.iterComboBox.getRecord().get('Name')){
-                                 
+                                console.log('Feature---> ',featureName, ' User Story: ', storyName, '  Iteracion US :', storyIteration, 'ITERACON FILTRO ', this.iterComboBox.getRecord().get('Name') );
+                              
                                   numStories = numStories + 1 ;
                                   f.UserStories.push({
                                   _ref: story.get('_ref'),
@@ -177,7 +178,8 @@ Ext.define('CustomApp', {
                                  
                                                                   
                               } else if ( this.down('#alluserstories').getValue())  {
-                                  
+                                console.log('**Feature---> ',featureName, ' User Story: ', storyName, '  Iteracion US :', storyIteration, 'ITERACON FILTRO ', this.iterComboBox.getRecord().get('Name') );
+                              
                                   f.UserStories.push({
                                   _ref: story.get('_ref'),
                                   FormattedID: story.get('FormattedID'),
@@ -203,8 +205,8 @@ Ext.define('CustomApp', {
                                 f.RemainingTotal = RemainingTotal ;
                                 features.push(f);
                               }
-                          //--pendingstories;
-                          if (--pendingstories === 0) {
+                          --pendingstories;
+                          if (pendingstories === 0) {
                               this._createGrid(features);
                           }
                             
