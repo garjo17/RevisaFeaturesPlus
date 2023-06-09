@@ -312,6 +312,7 @@ Ext.define('CustomApp', {
                               '<th> Name </th>' +
                               '<th> State </th>' +
                               '<th> Iteration </th>'+
+                              '<th> Project </th>'+
                               '<th> Estimate </th>' +
                               '<th> Actual </th>' +
                               '<th> Remainin </th>' +
@@ -332,6 +333,7 @@ Ext.define('CustomApp', {
                     '<td>'+ userstory.Name + '</td>' +
                     '<td>'+ userstory.ScheduleState + '</td>' +
                     '<td>'+ userstory.Iteration +  '</td>' +
+                    '<td>'+ userstory.Project +  '</td>' +
                     '<td>'+ userstory.TaskEstimateTotal + '</td>' +
                     '<td>'+ userstory.TaskActualTotal + '</td>' +
                     '<td>'+ userstory.TaskRemainingTotal + '</td>' +
